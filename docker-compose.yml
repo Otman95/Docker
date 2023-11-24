@@ -1,6 +1,17 @@
 version: '3.8'
 
 services:
+  mysql-db:
+    image: mysql:latest  # Utilisation de l'image MySQL depuis Docker Hub
+    container_name: mysql-container
+    ports: "3306:3306"  # Redirection des ports
+  environment:
+    MYSQL_ROOT_PASSWORD: your_password  # Définissez votre mot de passe ici
+    MYSQL_DATABASE: your_database_name  # Définissez le nom de la base de données
+    MYSQL_USER: your_username  # Définissez le nom d'utilisateur de la base de données
+    MYSQL_PASSWORD: your_user_password  # Définissez le mot de passe de l'utilisateur
+  volumes: mysql-data:/var/lib/mysql  # Stockage persistant des données
+  services:
   db:
     image: mysql:latest
     restart: always
@@ -22,10 +33,7 @@ services:
     image: wordpress:latest
     restart: always
     ports: "8000:80"
-    
-  environment:
     WORDPRESS_DB_HOST: db
     WORDPRESS_DB_USER: your_mysql_username
     WORDPRESS_DB_PASSWORD: your_mysql_password
     WORDPRESS_DB_NAME: your_database_name
-
