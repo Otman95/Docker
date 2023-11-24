@@ -1,5 +1,5 @@
 # Utiliser une image de base officielle
-FROM ubuntu:latest
+FROM python3:latest
 
 # Définir le répertoire de travail
 WORKDIR /Documents/Docker
