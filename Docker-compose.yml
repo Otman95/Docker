@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  mysql-db:
+    image: mysql:latest  # Utilisation de l'image MySQL depuis Docker Hub
+    container_name: mysql-container
+    ports: "3306:3306"  # Redirection des ports
+  environment:
+    MYSQL_ROOT_PASSWORD: your_password  # Définissez votre mot de passe ici
+    MYSQL_DATABASE: your_database_name  # Définissez le nom de la base de données
+    MYSQL_USER: your_username  # Définissez le nom d'utilisateur de la base de données
+    MYSQL_PASSWORD: your_user_password  # Définissez le mot de passe de l'utilisateur
+  volumes: mysql-data:/var/lib/mysql  # Stockage persistant des données
