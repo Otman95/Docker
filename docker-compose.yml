@@ -10,6 +10,7 @@ services:
       MYSQL_USER: your_mysql_username
       MYSQL_PASSWORD: your_mysql_password
 
+<<<<<<< HEAD
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     restart: always
@@ -18,3 +19,16 @@ services:
       MYSQL_ROOT_PASSWORD: your_mysql_root_password
     ports:
       - "8080:80"
+=======
+  wordpress:
+    image: wordpress:latest
+    restart: always
+    ports:
+      
+"8000:80"
+  environment:
+    WORDPRESS_DB_HOST: db
+    WORDPRESS_DB_USER: your_mysql_username
+    WORDPRESS_DB_PASSWORD: your_mysql_password
+    WORDPRESS_DB_NAME: your_database_name
+>>>>>>> Otman
